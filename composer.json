@@ -20,6 +20,7 @@
 	},
     "require": {
         "php": ">=7.2",
+		"composer-runtime-api": "^2.0",
 		"vlucas/phpdotenv": "^5.0",
 		"gabordemooij/redbean": "^5.6",
 		"tymon/jwt-auth": "^1.0",
