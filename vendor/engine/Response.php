@@ -6,7 +6,8 @@ class Response
 {
     /**
      * ReturnDefaultHeaders
-     * Возвращает текстовый контент-тайп заголовка
+     * Подготавливает ответ в текстовом формате.
+     * Печатает или возвращает готовое значение
      * @param $value
      * @param bool $print
      * @return void
@@ -20,7 +21,8 @@ class Response
 
     /**
      * ReturnJSONHeaders
-     * Возвращает JSON контент-тайп заголовка
+     * Подготавливает ответ в формате JSON.
+     * Печатает или возвращает готовое значение
      * @param $value
      * @param bool $isjson
      * @param bool $print
