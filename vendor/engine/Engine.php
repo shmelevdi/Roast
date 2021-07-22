@@ -2,7 +2,6 @@
 namespace Roast;
 use \Roast\Controller;
 use \Roast\Router;
-use \Roast\HttpRequests;
 use \Roast\Environment;
 use \Roast\Cors;
 use \Roast\ExceptionHandler;
@@ -21,6 +20,7 @@ class Engine
     private $exception;
     private $headers;
     private $cache;
+    private $response;
 
     /**
      * __construct
@@ -29,12 +29,13 @@ class Engine
      */
     public function __construct()
     {
-        $environment = new Environment();
-        $cors = new Cors();
-        Headers::ReturnDefaultHeaders();
-        $exception = new ExceptionHandler();
-        $cors->ReturnCorsHeader();     
-        $exception->ReturnResponseCode(200);
+            $this->environment = new Environment();
+            $this->cors = new Cors();
+            Headers::ReturnDefaultHeaders();
+            $this->exception = new ExceptionHandler();
+            $this->cors->ReturnCorsHeader();
+            $this->response= new Response();
+            $this->response->ReturnResponseCode(200);
     }
 
     /**

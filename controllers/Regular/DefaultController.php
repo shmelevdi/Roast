@@ -17,7 +17,6 @@ class DefaultController extends Controller
     */
    public static function welcome()
    {
-     echo Response::JSON(App::Ver());
+     return Response::JSON(App::Ver());
    }
 }
-?>

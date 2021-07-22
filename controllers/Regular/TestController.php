@@ -20,4 +20,3 @@ class TestController extends Controller
         echo Response::JSON(json_encode(["val"=>"test"]));
     }
 }
-?>

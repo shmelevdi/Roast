@@ -13,13 +13,18 @@ class App
     public $app;
     public function __construct()
     {
-        $this->app = (new \Roast\Engine())->run();
+        try{
+            $this->app = (new \Roast\Engine())->run();
+        }
+        catch (\Throwable $e)
+        {
+            ExceptionHandler::Facade($e);
+        }
     }
 
     public static function Ver()
     {
-        Headers::ReturnJSONHeaders();
-        return json_encode((object)["app_name"=>$_ENV['APP_NAME'], "app_version"=>"1.0", "framework"=>"Roast 1.1"]);
+        return (object)["app_name"=>$_ENV['APP_NAME'], "app_version"=>"1.0", "framework"=>"Roast 1.1"];
     }
 
 }
