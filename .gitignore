@@ -1,0 +1,8 @@
+.idea
+.vscode
+.env.backup
+vendor/*
+!vendor/engine
+.env
+resources/*
+!resources/Roast
