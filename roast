@@ -1,0 +1,6 @@
+#!/usr/bin/env php
+<?php
+define('ROAST_START', microtime(true));
+require __DIR__.'/vendor/autoload.php';
+$console = new \Roast\Console($argv);
+exit(0);

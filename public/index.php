@@ -6,5 +6,5 @@ The Roast Framework 1.1
 
 use Roast\App;
 
-$loader = require __DIR__.'/../vendor/autoload.php';
+require __DIR__.'/../vendor/autoload.php';
 $app = new App();
