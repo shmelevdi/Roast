@@ -43,7 +43,7 @@ class Engine
      * Вспомогательный метод сбора контроллеров и роутов;
      * @param mixed $dir
      * @param mixed $sort=0
-     * @return void
+     * @return array
      */
     private function require_dir($dir, $sort=0)
     {
@@ -80,5 +80,3 @@ class Engine
 
     }
 }
-
-?>

@@ -11,4 +11,4 @@
  */
 
 namespace Roast\Routes;
-$route->get('/', '\Roast\Controllers\Regular\DefaultController@welcome'); //Главная страница API
+$route->get('/', '\Roast\Controllers\Regular\DefaultController@test'); //Главная страница API

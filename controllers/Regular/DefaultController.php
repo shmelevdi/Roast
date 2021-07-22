@@ -1,5 +1,6 @@
 <?php 
 namespace Roast\Controllers\Regular;
+use Carbon\Carbon;
 use Roast\App;
 use Roast\Controller;
 use Roast\Environment;
@@ -12,11 +13,11 @@ class DefaultController extends Controller
 
    /**
     * welcome
-    * Главная страница фреймворка
     * @return void
     */
    public static function welcome()
    {
      return Response::JSON(App::Ver());
    }
+
 }
