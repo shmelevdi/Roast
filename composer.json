@@ -1,7 +1,7 @@
 {
 	"name": "shmelevdi/roast",
 	"type": "project",
-	"description": "The Roast Framework.",
+	"description": "The Roast PHP-Framework.",
 	"keywords": [
 		"framework",
 		"roast"
