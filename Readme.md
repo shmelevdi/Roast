@@ -6,6 +6,15 @@
 
 # The Roast PHP-Framework
 
+What is a Roast? Roast - a simple PHP framework for a clean API and for nothing more.
+
+There are no view-controllers in it. All responses can be received only in JSON, XML, Text\Plain formats.
+
+The philosophy of the framework divides its logical parts into controllers and models.
+
+As an ORM, the framework uses [RedBeanPHP 5](https://github.com/gabordemooij/redbean).
+
+
 You can create a project of the Roast framework using the Composer (^v.2.0):
 
 `composer create-project shmelevdi/roast`
