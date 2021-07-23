@@ -70,7 +70,7 @@ class Engine
      */
     public function run()
     {
-        $route = (new \Roast\Router)->middleware();
+        $route = new \Roast\Router;
         $routes = $this->require_dir(__DIR__."/../../routes");
         foreach ($routes as $router)
         {

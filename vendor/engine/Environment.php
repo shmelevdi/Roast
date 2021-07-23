@@ -17,16 +17,26 @@ namespace Roast;
 
 class Environment
 {
+
+    private $dotenv;
+
     /**
      * __construct
      *
      * @return void
+     * @throws \ErrorException
      */
-    public function __construct()
+        public function __construct()
     {
-        $dotenv = \Dotenv\Dotenv::createImmutable($_SERVER['DOCUMENT_ROOT'].'/../');
-        $dotenv->load();
+        if(!file_exists("../.env"))
+        {
+            throw new \ErrorException('Environment file (.env) is not found. If this is the first launch of the application - create .env from the example .env.example.', 1);
+        }
+        else
+        {
+            $this->dotenv = \Dotenv\Dotenv::createImmutable($_SERVER['DOCUMENT_ROOT'].'/../');
+            $this->dotenv->load();
+        }
+
     }
 }
-
-?>

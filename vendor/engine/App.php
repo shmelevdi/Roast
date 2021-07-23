@@ -24,7 +24,7 @@ class App
 
     public static function Ver()
     {
-        return (object)["app_name"=>$_ENV['APP_NAME'], "app_version"=>"1.0", "framework"=>"Roast 1.1"];
+        return (object)["app_name"=>$_ENV['APP_NAME'], "app_version"=>"1.0", "framework"=>"Roast 1.2"];
     }
 
 }
