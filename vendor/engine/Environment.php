@@ -34,7 +34,7 @@ class Environment
         }
         else
         {
-            $this->dotenv = \Dotenv\Dotenv::createImmutable($_SERVER['DOCUMENT_ROOT'].'/../');
+            $this->dotenv = \Dotenv\Dotenv::createImmutable('../.');
             $this->dotenv->load();
         }
 
