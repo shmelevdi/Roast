@@ -10,7 +10,8 @@
 	"autoload": {
 			"psr-4": {
 				"Roast\\": "vendor/engine",
-				"Roast\\Controllers\\": "controllers/"
+				"Roast\\Controllers\\": "controllers/",
+				"Roast\\Database\\": "database/"
 			}
     },
 	"config": {

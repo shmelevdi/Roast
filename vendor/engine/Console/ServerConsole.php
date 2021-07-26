@@ -11,10 +11,11 @@ class ServerConsole
 
     public function Start($host=null)
     {
+        chdir("../public");
         $default_host ="127.0.0.1:8081";
         if($host==null)$host = $default_host;
         print $this->return->getColoredString("Web-server listen on $host..." . PHP_EOL, "yellow");
-        exec("cd ./public && php -S $host");
+        exec("php -S $host");
     }
 
 }

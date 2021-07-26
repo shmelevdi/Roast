@@ -28,22 +28,33 @@ class Console
         $this->controllers = new ControllersConsole();
         $this->server = new ServerConsole();
         $this->database = new DatabaseConsole();
-        ////////////////////////////////////
+        //----------------------------------------------------------------------------------------------------------------------------//
         $this->shortopts .= "v";  // Вывод версии. Пример php roast -v
+        $this->shortopts .= "h";  // Вывод помощи. Пример php roast -h
         $this->longopts  = array(
-            "version",     // Вывод версии. Пример php roast --version
-            #Контроллеры
-            "make:controller:",     // Создать контроллер. Пример: php roast --make:controller Foo/Examples/MyController
-            #База данных
-            "db:test",    // Проверить соединение с базой данных. Пример: php roast --db:test
+            #Общие команды   - - - - - - - - - - - - - -  - - - - - - - - - - - - - -  - - - - - - - - - - - - - - - - - - - - - - - //
+            "version",     // Вывод версии. Пример php roast --version *ISWORK
+            "help",     // Вывод помощи. Пример php roast --help
+
+            #Контроллеры  - - - - - - - - - - - - - -   - - - - - - - - - - - - - -   - - - - - - - - - - - - - -   - - - - - - - - - //
+            "make:controller:",     // Создать контроллер. Пример: php roast --make:controller Foo/Examples/MyController *ISWORK
+
+            #База данных  - - - - - - - - - - - - - -   - - - - - - - - - - - - - -   - - - - - - - - - - - - - -   - - - - - - - - - //
+            "db:test",    // Проверить соединение с базой данных. Пример: php roast --db:test *ISWORK
             "make:migration:",     // Создать миграцию. Пример: php roast --make:migration FooMigration
+            // - - - - - - - - - - - - - -  - - - - - - -  - - - - - - -  - - - - - - -  - - - - - - -  - - - - - - -  - - - - - - - //
             "make:model:",     // Создать модель. Пример: php roast --make:model FooModel
             "migration:",     //(make:model:) Создать миграцию вместе с моделью. Пример: php roast --make:model Foo/FooModel --migration
-            #Сервис
+            // - - - - - - - - - - - - - -  - - - - - - -  - - - - - - -  - - - - - - -  - - - - - - -  - - - - - - -  - - - - - - - //
+            "make:migrate",     // Провести миграции. Пример: php roast --make:migrate
+            "only",     // Провести миграции из сепарированного списка. Пример: php roast --make:migrate --only=240720211714_users_1.php,240720211715_news_2.php
+
+            #Сервис  - - - - - - - - - - - - - -   - - - - - - - - - - - - - -   - - - - - - - - - - - - - -   - - - - - - - - - //
             "clear:cache",    // Очистка кэша
-            #Сервер
-            "server:start",        // Запуск локального веб-сервера. Пример: php roast --server:start
-            "host:",        //(server:start) Запуск локального веб-сервера на указанном хосте. Пример: php roast --server:start --host 127.0.0.1:8080
+
+            #Сервер  - - - - - - - - - - - - - -   - - - - - - - - - - - - - -   - - - - - - - - - - - - - -   - - - - - - - - - //
+            "server:start",        // Запуск локального веб-сервера. Пример: php roast --server:start *ISWORK
+            "host:",        //(server:start) Запуск локального веб-сервера на указанном хосте. Пример: php roast --server:start --host 127.0.0.1:8080 *ISWORK
         );
         $options = getopt($this->shortopts, $this->longopts);
         if(array_key_exists("v", $options) || array_key_exists("version", $options)) $this->Version();
@@ -53,6 +64,7 @@ class Console
 
         //База данных
         if(array_key_exists("db:test", $options)) $this->database->Test();
+        if(array_key_exists("make:migration", $options)) $this->database->MakeMigration($options["make:migration"]);
 
         //Веб-сервер
         if(array_key_exists("server:start", $options) && array_key_exists("host", $options)) $this->server->Start($options["host"]);

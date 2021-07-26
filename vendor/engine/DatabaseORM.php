@@ -13,7 +13,7 @@
 namespace Roast;
 use Roast\Environment;
 
-class Database
+class DatabaseORM
 {
     public $ORM;
     public function __construct()
